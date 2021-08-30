@@ -4,14 +4,15 @@
   margin-top: auto;
   margin-bottom: auto;
   cursor: pointer;
-  transition: background-color 0.2s;
+
+  @include transition(background-color 0.3s ease);
+
+  &:hover {
+    background-color: #c4c4c4;
+  }
 }
 
 .circle {
   width: 80px;
   height: 80px;
-}
-
-.arrow:hover {
-  background-color: #c4c4c4;
 }

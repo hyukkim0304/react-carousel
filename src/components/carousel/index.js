@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Easel from "./Easel";
 import Arrow, { DIRECTION } from "./Arrow";
+import Indicator from "./Indicator";
 
 import styles from "./index.module.scss";
 
@@ -14,8 +15,10 @@ export default function Carousel() {
     image: `/slider-assets/${mockData[curIdx].image}`,
   };
 
+  const totalImageCt = mockData.length;
+
   const incrementIdx = () => {
-    if (curIdx >= mockData.length - 1) {
+    if (curIdx >= totalImageCt - 1) {
       setCurIdx(0);
     } else {
       setCurIdx(curIdx + 1);
@@ -24,10 +27,14 @@ export default function Carousel() {
 
   const decrementIdx = () => {
     if (curIdx <= 0) {
-      setCurIdx(mockData.length - 1);
+      setCurIdx(totalImageCt - 1);
     } else {
       setCurIdx(curIdx - 1);
     }
+  };
+
+  const setIdx = (idx) => {
+    setCurIdx(idx);
   };
 
   return (
@@ -43,6 +50,7 @@ export default function Carousel() {
         <Easel data={curImageData} />
       </div>
       <Arrow direction={DIRECTION.NEXT} onClickHandler={incrementIdx} />
+      <Indicator data={mockData} curIdx={curIdx} onClickHandler={setIdx} />
     </div>
   );
 }
