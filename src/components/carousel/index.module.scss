@@ -1,0 +1,16 @@
+.carouselWrapper {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.easelWrapper {
+  width: 50%;
+  height: 550px;
+  margin: 0 5% 0 5%;
+}
+
+.overheadText {
+  font-size: calc(10px + 2vmin);
+  padding: 0 25% 0 25%;
+}
