@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
 import Easel from "./Easel";
 import Arrow, { DIRECTION } from "./Arrow";
 import Indicator from "./Indicator";
@@ -9,11 +10,6 @@ const mockData = require("slider-data.json");
 
 export default function Carousel() {
   const [curIdx, setCurIdx] = useState(0);
-
-  const curImageData = {
-    ...mockData[curIdx],
-    image: `/slider-assets/${mockData[curIdx].image}`,
-  };
 
   const totalImageCt = mockData.length;
 
@@ -37,10 +33,29 @@ export default function Carousel() {
     setCurIdx(idx);
   };
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => incrementIdx(),
+    onSwipedRight: () => decrementIdx(),
+  });
+
   return (
-    <div className={styles.carouselWrapper}>
+    <div className={styles.carouselContainer}>
       <Arrow direction={DIRECTION.PREV} onClickHandler={decrementIdx} />
-      <Easel data={curImageData} />
+      <div {...swipeHandlers} className={styles.carouselWrapper}>
+        <div
+          className={styles.easelContainer}
+          style={{ transform: `translateX(-${curIdx * 100}%)` }}
+        >
+          {mockData.map((data) => {
+            const imageData = {
+              ...data,
+              image: `/slider-assets/${data.image}`,
+            };
+
+            return <Easel data={imageData} curIdx={curIdx} key={data.alt} />;
+          })}
+        </div>
+      </div>
       <Arrow direction={DIRECTION.NEXT} onClickHandler={incrementIdx} />
       <Indicator data={mockData} curIdx={curIdx} onClickHandler={setIdx} />
     </div>

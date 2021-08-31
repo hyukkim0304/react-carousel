@@ -1,6 +1,33 @@
-.carouselWrapper {
+.carouselContainer {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   position: relative;
+}
+
+.carouselWrapper {
+  overflow: hidden;
+  margin: 0 5% 0 5%;
+
+  @include sm {
+    margin: unset;
+  }
+}
+
+.easelContainer {
+  width: 700px;
+  white-space: nowrap;
+  transition: transform 0.3s;
+
+  @include lg {
+    width: $lg-content-width;
+  }
+
+  @include md {
+    width: $md-content-width;
+  }
+
+  @include sm {
+    width: 100%;
+  }
 }

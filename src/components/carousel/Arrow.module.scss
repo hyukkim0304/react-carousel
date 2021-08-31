@@ -5,6 +5,7 @@
   border: none;
   margin-top: auto;
   margin-bottom: auto;
+  z-index: 1;
   cursor: pointer;
 
   @include transition(background-color 0.3s ease);
