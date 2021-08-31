@@ -1,18 +1,8 @@
+// width is set to 100% so it can be changed by outter element. (better for future I guess)
+
 .easelWrapper {
   width: 100%;
   display: inline-flex;
-
-  @include lg {
-    width: 100%;
-  }
-
-  @include md {
-    width: 100%;
-  }
-
-  @include sm {
-    width: 100%;
-  }
 }
 
 .image {

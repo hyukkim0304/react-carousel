@@ -27,6 +27,8 @@
 
   @include sm {
     width: 400px;
+    // I would love to hear some thoughts on this. I already used pretty much every width I can use on mobile device for carousel images. Image on modal was smaller unless I reduce the margin as below.
+    // Not sure clicking on image to see it smaller is good UI/UX or not
     margin: 0 5px 0 5px;
   }
 }

@@ -10,6 +10,7 @@
 
   @include transition(background-color 0.3s ease);
 
+  // Having buttons each side of image will make image too small on small device. Making it to overlay.
   @include sm {
     width: 50px;
     height: 50px;
@@ -20,6 +21,7 @@
   }
 }
 
+//this was a found from google search. Eliminate weird hover effect on mobile.
 @media (hover: hover) and (pointer: fine) {
   .arrow:hover {
     background-color: #c4c4c4;
