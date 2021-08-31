@@ -1,3 +1,43 @@
+$screen-sm-max: 576px;
+
+$screen-md-max: 768px;
+
+$screen-lg-max: 992px;
+
+$screen-xl-max: 1200px;
+
+$global-view-margin: 10px;
+
+$xl-content-width: 700px;
+
+$lg-content-width: 500px;
+
+$md-content-width: 340px;
+
+@mixin sm {
+  @media (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;

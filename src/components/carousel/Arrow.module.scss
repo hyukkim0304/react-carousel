@@ -1,4 +1,6 @@
 .arrow {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: none;
   margin-top: auto;
@@ -7,12 +9,25 @@
 
   @include transition(background-color 0.3s ease);
 
-  &:hover {
+  @include sm {
+    width: 50px;
+    border-radius: 10px;
+    height: 220px;
+    position: absolute;
+    opacity: 0.5;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arrow:hover {
     background-color: #c4c4c4;
   }
 }
 
-.circle {
-  width: 80px;
-  height: 80px;
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
 }

@@ -13,3 +13,20 @@
 .carouselContainer {
   margin-top: 2%;
 }
+
+.overheadText {
+  font-size: calc(8px + 2vmin);
+  width: $xl-content-width;
+
+  @include lg {
+    width: $lg-content-width;
+  }
+
+  @include md {
+    width: $md-content-width;
+  }
+
+  @include sm {
+    width: 100%;
+  }
+}
