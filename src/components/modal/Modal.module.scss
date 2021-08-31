@@ -1,0 +1,36 @@
+.modalWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.modalContent {
+  width: 1200px;
+  background-color: white;
+  margin: 0 20px 0 20px;
+  border-radius: 10px;
+
+  @include lg {
+    width: 800px;
+  }
+
+  @include md {
+    width: 500px;
+  }
+
+  @include sm {
+    width: 400px;
+    margin: 0 5px 0 5px;
+  }
+}
+
+.modalBody {
+  padding: 5px;
+}
